@@ -3,8 +3,13 @@ require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
+
+// Enable CORS for all routes and all origins
+app.use(cors());
+
 const port = process.env.PORT || 3000; // You can choose any port
 
 // Middleware to parse JSON and URL-encoded data
